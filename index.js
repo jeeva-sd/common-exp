@@ -18,6 +18,7 @@ app1.options('*', cors());
 app1.post('/login', (req, res) => {
     res.cookie('token', 'true', {
         // domain: '.favinsta.com',
+        sameSite: 'none',
         httpOnly: false,
         secure: true
     });

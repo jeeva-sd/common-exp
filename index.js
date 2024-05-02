@@ -20,7 +20,7 @@ app1.post('/login', (req, res) => {
         domain: '.favinsta.com',
         sameSite: 'lax',
         httpOnly: false,
-        secure: true
+        // secure: true
     });
 
     res.send('Cookie set for Client 1');

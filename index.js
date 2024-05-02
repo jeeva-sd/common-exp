@@ -17,7 +17,7 @@ app1.options('*', cors());
 
 app1.post('/login', (req, res) => {
     res.cookie('token', 'true', {
-        // domain: '.favinsta.com',
+        domain: '.favinsta.com',
         sameSite: 'none',
         httpOnly: false,
         secure: true
@@ -28,7 +28,7 @@ app1.post('/login', (req, res) => {
 
 app1.post('/logout', (req, res) => {
     console.log('logout 1', req.hostname);
-    res.clearCookie('token', { domain: req.hostname });
+    res.clearCookie('token', { domain: '.favinsta.com' });
     res.send('Logged out from Client 1');
 });
 

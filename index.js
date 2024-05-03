@@ -10,7 +10,7 @@ app1.use(cookieParser());
 
 app1.use(cors({
     origin: true,
-    // credentials: true
+    credentials: true
 }));
 
 app1.options('*', cors());

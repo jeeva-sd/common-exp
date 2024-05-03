@@ -41,4 +41,14 @@ app1.get('/checkLoggedIn', (req, res) => {
     }
 });
 
+app1.post('/check-login', (req, res) => {
+    console.log(req.cookies, 'cookies');
+    console.log(req.cookies.hello, 'req.cookies.hello');
+    if (req.cookies.hello === 'true') {
+        res.send('User is logged in to Client 1');
+    } else {
+        res.status(400).send('User is not logged in to Client 1');
+    }
+});
+
 app1.listen(app1Port, () => console.log(`Server running on port ${app1Port} for Client 1`));
